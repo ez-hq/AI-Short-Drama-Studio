@@ -1,0 +1,9 @@
+{
+  "README": "Copy to config.json and fill your LoomLoom(ShengSuanYun) handles. Cloud templates/prompts are proprietary and not in this repo.",
+  "profile": "shengsuanyun",
+  "storyEngineTemplateId": "",
+  "storyEngineVersionId": "",
+  "videoEngineTemplateId": "",
+  "videoEngineVersionId": "",
+  "finalizer": "skill/scripts/finish_video.py"
+}
