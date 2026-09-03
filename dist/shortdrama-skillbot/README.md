@@ -34,7 +34,3 @@ story + photos
 MIT (local code only). Cloud templates & prompts are proprietary and not distributed here.
 
 Author: ez-hq (ShortDrama SkillBot V1, 2026)
-## 定价 (v0.2.0, 最终)
-- 售价 ¥5 / 一次（30s 内）；>30s 按每30s=1次向上取整。
-- 跑前必提醒用户价格 + 云端(Wan, 人民币)执行确认；开发者/用户身份由平台官方判定，无本地区分逻辑。
-- 本地无用云 handle 存私有 config.runtime.json（不入开源库）。
