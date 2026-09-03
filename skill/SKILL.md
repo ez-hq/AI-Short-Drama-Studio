@@ -18,10 +18,10 @@ Flow: plan -> photo-anchored segments -> QC + segment-level retry (<=2) -> ffmpe
 - **售价：¥5 / 一次（30s 内）**；>30s 按 `每30s=1次` 向上取整（见 pricing.json）。
 - **跑前提醒（必守）**：执行云端视频(Wan, 人民币)前，先展示本次价格(¥X) + 云端生成提示，**用户确认后**才跑。
 - 开发者/用户身份由官方链路判定，本 skill 不做区分。
-- 硬上限见 pricing.json.costCap（超即停，不烧钱）。
+- **不设上限**：按用户需求时长执行（30s=¥5，超30s每30s=1次）；每段生成失败重试≤2，由用户确认后继续。
 
 Operational notes:
 - `scripts/finish_video.py --runid <segment-run-id> --wd <dir>` 将段拼成 final mp4。
 - 上传照片即表示有肖像使用权，listing 需声明。
 - 保留旧版本、不删除；本地代码 MIT；云端模板/提示词为专有（不入公开仓库）。
-- 
+- 发布/身份确认：先读 `ACCOUNT-IDENTITY.md`（三连查，避免发错账号）。

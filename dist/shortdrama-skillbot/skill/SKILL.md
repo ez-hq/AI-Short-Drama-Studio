@@ -24,4 +24,4 @@ Operational notes:
 - `scripts/finish_video.py --runid <segment-run-id> --wd <dir>` 将段拼成 final mp4。
 - 上传照片即表示有肖像使用权，listing 需声明。
 - 保留旧版本、不删除；本地代码 MIT；云端模板/提示词为专有（不入公开仓库）。
-- 发布/身份确认：先读 `ACCOUNT-IDENTITY.md`（三连查，避免发错账号）。
+- 
