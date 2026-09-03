@@ -8,7 +8,7 @@ Turn a short story + character photo(s) into a **20–30s vertical (9:16, 720p) 
 - **Photo-anchored** — uses the user's real photo as the visual identity; no unstable text-invented character frames.
 - **Cheap** — micro segments via a first→last-frame Wan engine (~¥0.28/segment measured); a 20–30 s drama ≈ ¥1–3, far below Kling Pro.
 - **One-click local Skill** — story → plan → segments → QC → assemble → `shortdrama.mp4`.
-- **Segment-level QC & retry (≤2, budget-capped)** — only re-run a failed segment, never the whole set.
+- **Segment-level QC & retry (≤2 per segment)** — only re-run a failed segment, never the whole set.
 
 ## Pipeline
 ```
@@ -28,7 +28,7 @@ story + photos
 
 ## Cost model (V1 target)
 - 720p, 4 × 5–7 s ≈ 20–30 s, target ≈ ¥13–20 / task; measured micro sample ≈ ¥2–3.
-- retry reserve ⇔ budget cap = taken; never exceed.
+- no duration/cost cap: run to the user's requested length; retry ≤2 per segment, confirmed by user.
 
 ## License
 MIT (local code only). Cloud templates & prompts are proprietary and not distributed here.

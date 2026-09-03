@@ -3,11 +3,8 @@
  "unitSeconds": 30,
  "unitPriceCNY": 5,
  "countingRule": "30s以内=1次；超过按每30s=1次向上取整",
- "costCap": {
-  "hardCapCNY": 8.0,
-  "overBehavior": "停止生成并提示用户(不继续烧)"
- },
  "buyerNote": "对用户售价 ¥5/一次(30s内)",
  "role": "开发者/用户身份由平台 LoomLoom 官方 API 判定；本 skill 不做区分",
- "preRunReminder": "跑前必须向用户展示: 本次=¥X (30s 一次 ¥5) + 会调用云端 Wan 视频生成(人民币) → 用户确认后再执行"
+ "preRunReminder": "跑前必须向用户展示: 本次=¥X (30s 一次 ¥5) + 会调用云端 Wan 视频生成(人民币) → 用户确认后再执行",
+ "cap": "none  (不设上限；一次按需时长计次，每次按retry变量≤2)"
 }
