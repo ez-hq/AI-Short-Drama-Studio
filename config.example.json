@@ -1,9 +1,7 @@
 {
-  "README": "Copy to config.json and fill your LoomLoom(ShengSuanYun) handles. Cloud templates/prompts are proprietary and not in this repo.",
   "profile": "shengsuanyun",
-  "storyEngineTemplateId": "",
-  "storyEngineVersionId": "",
-  "videoEngineTemplateId": "",
-  "videoEngineVersionId": "",
-  "finalizer": "skill/scripts/finish_video.py"
+  "activateNote": "复制本文件为 config.runtime(或.env) 并填入你自己的云端 handle。私有 handle 不进公开包。",
+  "storyEngine": { "templateId": "", "versionId": "" },
+  "videoMicro": { "templateId": "", "versionId": "" },
+  "imageEditor": { "templateId": "", "versionId": "" }
 }
