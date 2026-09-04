@@ -25,3 +25,11 @@ Operational notes:
 - 上传照片即表示有肖像使用权，listing 需声明。
 - 保留旧版本、不删除；本地代码 MIT；云端模板/提示词为专有（不入公开仓库）。
 - 发布/身份确认：先读 `ACCOUNT-IDENTITY.md`（三连查，避免发错账号）。
+
+## 模型来源硬规则（必守，任何 agent）
+- **文本/图片/视频 只要调用模型，只允许两条路**：
+  1) **LoomLoom（胜算云）**：人民币计费（text/image/video 都有）。为本 Skill 的正式/默认路径。
+  2) **用户本地已有的图片/编辑模型**（用户明确表示可用）。
+- **禁止**：用本人 WorkBuddy 等其它平台的 ImageGen/轮子/积分（credits）来跑任何一步。图片关键帧如需要且用户没给照片/没本地模型 → 必须走 **Loom 的图片模型（前台如 `google/gemini-2.5-flash-image`，人民币）**。
+- 原则：**用户全程只走人民币(Loom)或本地模型；绝不再扣 WorkBuddy credits。**
+
