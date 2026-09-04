@@ -33,3 +33,8 @@ Operational notes:
 - **禁止**：用本人 WorkBuddy 等其它平台的 ImageGen/轮子/积分（credits）来跑任何一步。图片关键帧如需要且用户没给照片/没本地模型 → 必须走 **Loom 的图片模型（前台如 `google/gemini-2.5-flash-image`，人民币）**。
 - 原则：**用户全程只走人民币(Loom)或本地模型；绝不再扣 WorkBuddy credits。**
 
+
+## 精确计量与默认引擎(可新增link不影响运行)
+- 一次=一条成片(≤30s)=¥5；>30s 每30s=1次。
+- 默认/唯一低成本引擎=Micro Wan(wan-2.2-i2v fast-lora)；若选其它(如 wan2.6)须显式并先用 qc_report/预检。
+- Self-check:`python3 tools/skill_check.py` 确认本机文件齐(不校验云端)。
