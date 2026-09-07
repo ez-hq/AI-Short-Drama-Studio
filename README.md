@@ -1,5 +1,13 @@
 # ShortDrama SkillBot (V1)
 
+<!-- badges -->
+[![License: MIT](https://img.shields.io/github/license/ez-hq/AI-Short-Drama-Studio)]
+[![Release](https://img.shields.io/github/v/release/ez-hq/AI-Short-Drama-Studio?sort=semver)]
+[![Downloads](https://img.shields.io/github/downloads/ez-hq/AI-Short-Drama-Studio/total)]
+[![Version](https://img.shields.io/badge/version-0.6.0-blue)]
+
+
+
 Turn a short story + character photo(s) into a **20–30s vertical (9:16, 720p) micro-drama MP4**, automatically planned, generated, QC'd and assembled.
 
 > Photo-anchors carry "who"; the story decides "what happens"; the planner decides "how to shoot"; the video model decides "how it moves."
