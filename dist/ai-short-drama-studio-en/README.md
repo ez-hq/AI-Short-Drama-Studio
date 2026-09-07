@@ -1,6 +1,6 @@
 # AI Short Drama Studio — English build
 
-English-language build of the AI Short Drama Studio SkillBot. **Same product, same cloud** as the Chinese build: it runs on **LoomLoom (shengsuanyun / 胜算云)**, billed in CNY, exactly like the zh build. Only the language differs.
+English-language build of the AI Short Drama Studio SkillBot. **Same product, same cloud** as the Chinese build: it runs on **LoomLoom (shengsuanyun)**, billed in CNY, exactly like the zh build. Only the language differs.
 
 - English build version: 0.6.0-en
 - Chinese build version: 0.6.0 (same product, Chinese language)
