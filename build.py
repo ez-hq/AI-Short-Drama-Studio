@@ -18,16 +18,17 @@ def zip_dir(dirpath, zip_path):
                 rel = os.path.relpath(full, dirpath)
                 z.write(full, os.path.join(base, rel))
 
-LANG = {"zh": ("SKILL.md", "AGENT-UX.md"), "en": ("SKILL.en.md", "AGENT-UX.en.md")}
-shared = ["pricing.json", "config.example.json", "LICENSE", "README.md"]
+LANG = {"zh": ("SKILL.md", "AGENT-UX.md", "README.md"), "en": ("SKILL.en.md", "AGENT-UX.en.md", "README.en.md")}
+shared = ["pricing.json", "config.example.json", "LICENSE"]
 
-for L, (s, a) in LANG.items():
+for L, (s, a, r) in LANG.items():
     D = os.path.join(DIST, f"{NAME}-{L}")
     if os.path.exists(D): shutil.rmtree(D)
     os.makedirs(os.path.join(D, "scripts"))
     os.makedirs(os.path.join(D, "tools"))
     shutil.copy(os.path.join(REPO, "skill", s), os.path.join(D, "SKILL.md"))
     shutil.copy(os.path.join(REPO, "skill", a), os.path.join(D, "AGENT-UX.md"))
+    shutil.copy(os.path.join(REPO, r), os.path.join(D, "README.md"))
     for f in shared:
         p = os.path.join(REPO, f)
         if os.path.exists(p): shutil.copy(p, os.path.join(D, f))

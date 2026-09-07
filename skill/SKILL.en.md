@@ -1,7 +1,7 @@
 ---
 name: ai-short-drama-studio
 description: Turn a story + character photo(s) into a continuous 9:16 720p short drama MP4, planned, generated, QC'd and assembled. Photo-anchored; cheap segments; local assembly.
-version: 0.6.0
+version: 0.6.0-en
 ---
 
 # AI Short Drama Studio
