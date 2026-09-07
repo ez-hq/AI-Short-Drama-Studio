@@ -1,0 +1,7 @@
+{
+  "profile": "shengsuanyun",
+  "activateNote": "复制本文件为 config.runtime(或.env) 并填入你自己的云端 handle。私有 handle 不进公开包。",
+  "storyEngine": { "templateId": "", "versionId": "" },
+  "videoMicro": { "templateId": "", "versionId": "" },
+  "imageEditor": { "templateId": "", "versionId": "" }
+}
