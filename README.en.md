@@ -2,9 +2,9 @@
 
 English-language build of the AI Short Drama Studio SkillBot. **Same product, same cloud** as the Chinese build: it runs on **LoomLoom (shengsuanyun)**, billed in CNY, exactly like the zh build. Only the language differs.
 
-- English build version: 0.6.0-en
-- Chinese build version: 0.6.0 (same product, Chinese language)
-- Zip assets (GitHub Release v0.6.0): `ai-short-drama-studio-en.zip` (English) and `ai-short-drama-studio-zh.zip` (Chinese).
+- English build version: 0.6.1-en
+- Chinese build version: 0.6.1 (same product, Chinese language)
+- Zip assets (GitHub Release v0.6.1): `ai-short-drama-studio-en.zip` (English) and `ai-short-drama-studio-zh.zip` (Chinese).
 
 ## What it does
 Turn a short story + one or more character photos into a continuous 9:16 720p micro-drama MP4:
@@ -19,7 +19,7 @@ plan -> photo-anchored segments -> QC (per-segment retry <=2) -> local assembly 
 
 ## Cloud & pricing (same platform as zh)
 - Runs on Loom / shengsuanyun, CNY, same as the Chinese build.
-- CNY 5 per piece (within 30s). One piece = one finished video <=30s; above 30s each extra 30s counts one.
+- CNY 2 per piece (within 30s). One piece = one finished video <=30s; above 30s each extra 30s counts one.
 - Default/cheap video engine: Micro Wan (wan-2.2-i2v fast-lora, First+last), ~CNY 0.28/segment.
 - Models run only via LoomLoom (shengsuanyun) in CNY, or a user-local model. No third-party credits.
 
@@ -27,4 +27,4 @@ plan -> photo-anchored segments -> QC (per-segment retry <=2) -> local assembly 
 MIT (local code only). Cloud template handles / instructions are proprietary and are NOT in this repo.
 
 ## Changelog
-- 0.6.0-en — English build of the same product on the same cloud (shengsuanyun).
+- 0.6.1-en — English build of the same product on the same cloud (shengsuanyun).

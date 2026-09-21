@@ -1,0 +1,3 @@
+# Runtime dependencies for scripts/run_one.py and scripts/finish_video.py
+imageio-ffmpeg==0.6.0
+Pillow==11.3.0

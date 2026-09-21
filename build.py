@@ -19,7 +19,7 @@ def zip_dir(dirpath, zip_path):
                 z.write(full, os.path.join(base, rel))
 
 LANG = {"zh": ("SKILL.md", "AGENT-UX.md", "README.md"), "en": ("SKILL.en.md", "AGENT-UX.en.md", "README.en.md")}
-shared = ["pricing.json", "config.example.json", "LICENSE"]
+shared = ["pricing.json", "config.example.json", "LICENSE", "requirements.txt"]
 
 for L, (s, a, r) in LANG.items():
     D = os.path.join(DIST, f"{NAME}-{L}")

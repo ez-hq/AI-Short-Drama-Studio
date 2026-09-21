@@ -1,7 +1,7 @@
 ---
 name: ai-short-drama-studio
 description: Turn a story + character photo(s) into a continuous 9:16 720p short drama MP4, planned, generated, QC'd and assembled. Photo-anchored; cheap segments; local assembly. Use when a user wants an AI-generated short cinematic video from a story and a reference photo.
-version: 0.6.0
+version: 0.6.1
 ---
 
 # ShortDrama SkillBot
@@ -9,16 +9,19 @@ version: 0.6.0
 Inputs: story, photos (1+; first = character anchor), optional target duration.
 Flow: plan -> photo-anchored segments -> QC + segment-level retry (<=2) -> ffmpeg concat -> final mp4 (+ subtitle/narration/cover).
 
+## 安装（首次必做）
+- 先装依赖：`pip3 install -r requirements.txt`（imageio-ffmpeg、Pillow）。缺了 `scripts/run_one.py` 会直接报 `ModuleNotFoundError: No module named 'imageio_ffmpeg'`。
+
 ## 视频引擎（重要）
 - 便宜出片请用 **Micro Wan (First+last)** 微引擎（≈¥0.28/段；这是主力）。
 - **不要默认用 Wan2.6-i2v（≈¥6/段）**——贵且同样前端，除非明确要长/高清。
 - 云端 handle 见 `config.runtime.json`（私有，不在 GitHub）。
 
 ## 定价 / 执行（最终）
-- **售价：¥5 / 一次（30s 内）**；>30s 按 `每30s=1次` 向上取整（见 pricing.json）。
+- **售价：¥2 / 一次（30s 内）**；>30s 按 `每30s=1次` 向上取整（见 pricing.json）。
 - **跑前提醒（必守）**：执行云端视频(Wan, 人民币)前，先展示本次价格(¥X) + 云端生成提示，**用户确认后**才跑。
 - 开发者/用户身份由官方链路判定，本 skill 不做区分。
-- **不设上限**：按用户需求时长执行（30s=¥5，超30s每30s=1次）；每段生成失败重试≤2，由用户确认后继续。
+- **不设上限**：按用户需求时长执行（30s=¥2，超30s每30s=1次）；每段生成失败重试≤2，由用户确认后继续。
 
 Operational notes:
 - `scripts/finish_video.py --runid <segment-run-id> --wd <dir>` 将段拼成 final mp4。
@@ -35,6 +38,6 @@ Operational notes:
 
 
 ## 精确计量与默认引擎(可新增link不影响运行)
-- 一次=一条成片(≤30s)=¥5；>30s 每30s=1次。
+- 一次=一条成片(≤30s)=¥2；>30s 每30s=1次。
 - 默认/唯一低成本引擎=Micro Wan(wan-2.2-i2v fast-lora)；若选其它(如 wan2.6)须显式并先用 qc_report/预检。
 - Self-check:`python3 tools/skill_check.py` 确认本机文件齐(不校验云端)。

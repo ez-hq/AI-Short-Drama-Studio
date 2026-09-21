@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/github/license/ez-hq/AI-Short-Drama-Studio)]
 [![Release](https://img.shields.io/github/v/release/ez-hq/AI-Short-Drama-Studio?sort=semver)]
 [![Downloads](https://img.shields.io/github/downloads/ez-hq/AI-Short-Drama-Studio/total)]
-[![Version](https://img.shields.io/badge/version-0.6.0-blue)]
+[![Version](https://img.shields.io/badge/version-0.6.1-blue)]
 
 
 
@@ -35,7 +35,6 @@ story + photos
 > Cloud orchestration config (template handles, model selections & proprietary prompts) is **not** part of this public repo — it stays proprietary and is provided to licensed users via `config.example.json`.
 
 ## Cost model (V1 target)
-- 720p, 4 × 5–7 s ≈ 20–30 s, target ≈ ¥13–20 / task; measured micro sample ≈ ¥2–3.
 - no duration/cost cap: run to the user's requested length; retry ≤2 per segment, confirmed by user.
 
 ## License
@@ -43,6 +42,6 @@ MIT (local code only). Cloud templates & prompts are proprietary and not distrib
 
 Author: ez-hq (ShortDrama SkillBot V1, 2026)
 ## 定价 (v0.2.0, 最终)
-- 售价 ¥5 / 一次（30s 内）；>30s 按每30s=1次向上取整。
+- 售价 ¥2 / 一次（30s 内）；>30s 按每30s=1次向上取整。
 - 跑前必提醒用户价格 + 云端(Wan, 人民币)执行确认；开发者/用户身份由平台官方判定，无本地区分逻辑。
 - 本地运行时 handle 存私有 config 文件（不入开源库）。

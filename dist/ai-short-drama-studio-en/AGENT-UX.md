@@ -4,7 +4,7 @@ Applies whatever the host: WorkBuddy, Codex, Claude, Cursor, etc. Behavior must 
 
 ## 1. User-facing flow (always)
 1. State what will be produced: a vertical (9:16) short drama from photos + story.
-2. Quote before run: before any cloud video (Wan, CNY), show `length X ~= CNY Y (CNY 5 per 30s piece)` and the cloud reminder; wait for explicit confirmation.
+2. Quote before run: before any cloud video (Wan, CNY), show `length X ~= CNY Y (CNY 2 per 30s piece)` and the cloud reminder; wait for explicit confirmation.
 3. Run only after the user confirms. If unsure, do nothing.
 4. Length has no cap, per user's request.
 5. On completion, give the final mp4 path + a short summary (duration, cost), never hide the essentials.

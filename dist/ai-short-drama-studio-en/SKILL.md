@@ -1,7 +1,7 @@
 ---
 name: ai-short-drama-studio
 description: Turn a story + character photo(s) into a continuous 9:16 720p short drama MP4, planned, generated, QC'd and assembled. Photo-anchored; cheap segments; local assembly.
-version: 0.6.0-en
+version: 0.6.1-en
 ---
 
 # AI Short Drama Studio
@@ -9,16 +9,19 @@ version: 0.6.0-en
 Inputs: story, photos (1+; the first photo is the character anchor), optional target duration.
 Flow: plan -> photo-anchored segments -> QC + per-segment retry (<=2) -> ffmpeg concat -> final mp4 (+ subtitle / narration / cover).
 
+## Install (first run, required)
+- Install deps first: `pip3 install -r requirements.txt` (imageio-ffmpeg, Pillow). Without them `scripts/run_one.py` fails with `ModuleNotFoundError: No module named 'imageio_ffmpeg'`.
+
 ## Video Engine (important)
 - Default/cheap: **Micro Wan (First+last)** (wan-2.2-i2v fast-lora), ~CNY 0.28 per segment. Prefer this.
 - Do NOT default to wan2.6-i2v (~CNY 6/seg): expensive unless the user explicitly asks for longer/higher-res.
 - Private cloud handles live in `config.runtime.json` (local only; not in this repo).
 
 ## Pricing / Execution (final)
-- **Price: CNY 5 per piece (within 30s)**; above 30s, billing rounds up to a whole 30s "piece" (see pricing.json).
+- **Price: CNY 2 per piece (within 30s)**; above 30s, billing rounds up to a whole 30s "piece" (see pricing.json).
 - Mandatory pre-run notice: before cloud video (Wan, CNY), always show the price (CNY X) and the cloud-cost reminder; **run only after explicit user confirmation**.
 - Buyer/developer identity is decided by the official API chain, not by this skill.
-- **No hard cap**: run to the user's requested length (30s=CNY 5; each extra 30s = another piece); per-segment failures retry up to 2x, continuing after user confirmation.
+- **No hard cap**: run to the user's requested length (30s=CNY 2; each extra 30s = another piece); per-segment failures retry up to 2x, continuing after user confirmation.
 
 Operational notes:
 - `scripts/finish_video.py --runid <segment-run-id> --wd <dir>` assembles segments into final mp4.
@@ -34,6 +37,6 @@ Operational notes:
 - Rule: user motion runs only in CNY-Loom or their local; never third-party credits.
 
 ## Precise metering + default engine
-- One "piece" = one finished video (<=30s) = CNY 5; >30s each 30s counts one.
+- One "piece" = one finished video (<=30s) = CNY 2; >30s each 30s counts one.
 - Default/cheap engine only = way-2.2-i2v-fast-lora; other engines (e.g. wan2.6) require explicit request and do a qc_report preflight.
 - Self-check: `python3 tools/skill_check.py` (verifies local files only, not cloud).
