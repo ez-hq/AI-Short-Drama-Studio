@@ -2,9 +2,9 @@
 
 English-language build of the AI Short Drama Studio SkillBot. **Same product, same cloud** as the Chinese build: it runs on **LoomLoom (shengsuanyun)**, billed in CNY, exactly like the zh build. Only the language differs.
 
-- English build version: 0.6.1-en
-- Chinese build version: 0.6.1 (same product, Chinese language)
-- Zip assets (GitHub Release v0.6.1): `ai-short-drama-studio-en.zip` (English) and `ai-short-drama-studio-zh.zip` (Chinese).
+- English build version: 0.7.0-en
+- Chinese build version: 0.7.0 (same product, Chinese language)
+- Zip assets (GitHub Release v0.7.0): `ai-short-drama-studio-en.zip` (English) and `ai-short-drama-studio-zh.zip` (Chinese).
 
 ## What it does
 Turn a short story + one or more character photos into a continuous 9:16 720p micro-drama MP4:
@@ -27,4 +27,4 @@ plan -> photo-anchored segments -> QC (per-segment retry <=2) -> local assembly 
 MIT (local code only). Cloud template handles / instructions are proprietary and are NOT in this repo.
 
 ## Changelog
-- 0.6.1-en — English build of the same product on the same cloud (shengsuanyun).
+- 0.7.0-en — English build of the same product on the same cloud (shengsuanyun).

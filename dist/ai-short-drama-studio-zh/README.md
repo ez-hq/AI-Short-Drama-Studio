@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/github/license/ez-hq/AI-Short-Drama-Studio)]
 [![Release](https://img.shields.io/github/v/release/ez-hq/AI-Short-Drama-Studio?sort=semver)]
 [![Downloads](https://img.shields.io/github/downloads/ez-hq/AI-Short-Drama-Studio/total)]
-[![Version](https://img.shields.io/badge/version-0.6.1-blue)]
+[![Version](https://img.shields.io/badge/version-0.7.0-blue)]
 
 
 

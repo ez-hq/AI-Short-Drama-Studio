@@ -1,7 +1,7 @@
 ---
 name: ai-short-drama-studio
 description: Turn a story + character photo(s) into a continuous 9:16 720p short drama MP4, planned, generated, QC'd and assembled. Photo-anchored; cheap segments; local assembly. Use when a user wants an AI-generated short cinematic video from a story and a reference photo.
-version: 0.6.1
+version: 0.7.0
 ---
 
 # ShortDrama SkillBot
@@ -11,6 +11,15 @@ Flow: plan -> photo-anchored segments -> QC + segment-level retry (<=2) -> ffmpe
 
 ## 安装（首次必做）
 - 先装依赖：`pip3 install -r requirements.txt`（imageio-ffmpeg、Pillow）。缺了 `scripts/run_one.py` 会直接报 `ModuleNotFoundError: No module named 'imageio_ffmpeg'`。
+
+## 两种运行模式
+- **照片模式（默认，旧行为不变）**：`run_one.py --photos-dir DIR` —— N 张照片两两插值成 N-1 段。
+- **剧情模式（新）**：`run_one.py --photos-dir DIR --story story.txt [--character chars.txt]`
+  Story Engine 出蓝图 -> Keyframe Editor 出 9:16 关键帧 -> Micro Engine 出片，并自动生成 `subtitle.srt`。
+  - **多角色**：照片按文件名排序，第 i 张对应蓝本里第 i 个角色（`characterBible[i]`）；`--character` 可传每角色一行的 txt。
+  - `--duration` 只能 Auto/60/90/120；`--max-cost N` 可在预估超限时熔断不扣费。
+  - 上游模型有限流，脚本自动分批串行 + 失败重试（≤2）。
+  - 成本约 ¥3 / 6 段（Story 0.006 + 关键帧 0.2/张 + 出片 0.31/段）。
 
 ## 视频引擎（重要）
 - 便宜出片请用 **Micro Wan (First+last)** 微引擎（≈¥0.28/段；这是主力）。

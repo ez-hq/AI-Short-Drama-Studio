@@ -1,7 +1,7 @@
 ---
 name: ai-short-drama-studio
 description: Turn a story + character photo(s) into a continuous 9:16 720p short drama MP4, planned, generated, QC'd and assembled. Photo-anchored; cheap segments; local assembly.
-version: 0.6.1-en
+version: 0.7.0-en
 ---
 
 # AI Short Drama Studio
@@ -11,6 +11,18 @@ Flow: plan -> photo-anchored segments -> QC + per-segment retry (<=2) -> ffmpeg 
 
 ## Install (first run, required)
 - Install deps first: `pip3 install -r requirements.txt` (imageio-ffmpeg, Pillow). Without them `scripts/run_one.py` fails with `ModuleNotFoundError: No module named 'imageio_ffmpeg'`.
+
+## Two run modes
+- **Photo mode (default, unchanged)**: `run_one.py --photos-dir DIR` - N photos become N-1 interpolated segments.
+- **Story mode (new)**: `run_one.py --photos-dir DIR --story story.txt [--character chars.txt]`
+  The Story Engine builds the blueprint, the Keyframe Editor renders 9:16 keyframes, the Micro Engine
+  renders the segments, and a `subtitle.srt` is written.
+  - **Multiple characters**: photos are sorted by filename; photo i maps to blueprint character i
+    (`characterBible[i]`). Pass a one-line-per-character txt file to `--character`.
+  - `--duration` accepts Auto/60/90/120 only; `--max-cost N` aborts before submitting if a step's
+    estimate exceeds N (nothing is charged).
+  - Upstream models are rate limited, so the script batches sequentially and retries failures (up to 2).
+  - Cost is about CNY 3 per 6 segments (Story 0.006 + keyframes 0.2 each + segments 0.31 each).
 
 ## Video Engine (important)
 - Default/cheap: **Micro Wan (First+last)** (wan-2.2-i2v fast-lora), ~CNY 0.28 per segment. Prefer this.
